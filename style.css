@@ -1,0 +1,527 @@
+/* General Reset */
+body, ul, li, a, h1, h4, p, button {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header Styling */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#header .logo {
+    height: 50px;
+}
+
+#navbar {
+    display: flex;
+    gap: 20px;
+}
+
+#navbar li {
+    position: relative;
+}
+
+#navbar li a {
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #ff9800;
+}
+
+/* Cart Count Styling */
+#cart-count {
+    background-color: #ff5722;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+/* Mobile Menu Toggle */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #navbar {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #navbar.show {
+        display: flex;
+    }
+
+    #navbar li a {
+        padding: 10px;
+        text-align: center;
+        border-bottom: 1px solid #555;
+    }
+
+    #navbar li a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Hero Section Styling */
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("images/clark-street-mercantile-qnKhZJPKFD8-unsplash.jpg") no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Categories Section */
+#categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.category-card {
+    flex: 1;
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 2px solid #eee;
+}
+
+.category-card h3 {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section Styling */
+#contact {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+#contact h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* General Styling for the Submit Button */
+#contact-form button {
+    padding: 12px 25px; /* Adjust padding for a balanced look */
+    font-size: 16px; /* Font size for clarity */
+    font-weight: bold; /* Make the text bold */
+    color: #ffffff; /* White text for contrast */
+    background-color: #333; /* Rich light black background */
+    border: none; /* No border for a clean look */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and click effect */
+}
+
+/* Hover Effect */
+#contact-form button:hover {
+    background-color: #555; /* Slightly lighter shade on hover */
+    transform: translateY(-3px); /* Slight raise effect */
+}
+
+/* Active (Click) Effect */
+#contact-form button:active {
+    background-color: #222; /* Darker shade when clicked */
+    transform: translateY(0); /* Reset the hover effect on click */
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3); /* Slight inner shadow for a pressed look */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Footer Section */
+#footer {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    z-index: 1000;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer .social-icons a {
+    color: white;
+    font-size: 20px;
+}
+
+/* Shop Page Header */
+#shop-header {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #ddd;
+}
+
+#shop-header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#search-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: #555;
+}
+
+.popular-searches {
+    text-align: center; /* Center the content */
+    margin: 20px auto; /* Add spacing */
+    font-size: 18px; /* Adjust font size */
+    color: #333; /* Adjust text color */
+}
+
+.popular-searches h3 {
+    margin-bottom: 10px; /* Space below the heading */
+    font-size: 24px; /* Heading font size */
+    font-weight: bold; /* Bold heading */
+}
+
+.popular-searches p {
+    margin: 0;
+    font-size: 16px; /* Text font size */
+    line-height: 1.5; /* Line spacing */
+}
+
+
+.trending-now h3 {
+    text-align: center; /* Center-align the text */
+    font-size: 24px; /* Adjust the font size if necessary */
+    margin: 20px auto; /* Center margin */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Adjust text color */
+}
+#trending-grid {
+    text-align: center; /* Ensure the content inside is centered */
+    margin-top: 20px; /* Adjust the spacing from the content above */
+}
+
+
+/* Product Grid Styling */
+#product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-card h4 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: #007bff;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product-card button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design for Product Grid */
+@media (max-width: 992px) {
+    #product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Apply Flexbox to the body to keep footer at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the page takes at least the full height */
+    margin: 0;
+}
+
+#header, #cart-section {
+    flex-grow: 1; /* Allow these sections to expand and take up space */
+}
+
+#footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* Cart page content styles */
+#cart-section {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.cart-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.cart-items {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+}
+
+.item-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.quantity input {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+}
+
+.remove-item {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.remove-item:hover {
+    background-color: #e60000;
+}
+
+.cart-summary {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: right;
+}
+
+#checkout-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#checkout-button:hover {
+    background-color: #555;
+}
